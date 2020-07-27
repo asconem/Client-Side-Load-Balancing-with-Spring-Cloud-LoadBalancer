@@ -1,0 +1,1 @@
+Builds a microservice application that uses Spring Cloud LoadBalancer to provide client-side load-balancing in calls to another microservice.
