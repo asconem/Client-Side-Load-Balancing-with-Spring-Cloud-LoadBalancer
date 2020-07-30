@@ -32,4 +32,14 @@ class SayHelloApplicationTests {
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
         then(entity.getBody()).isEqualTo("Hi!");
     }
+
+    @Test
+    void shouldReturn200WhenSendingRequestToGreeting() {
+        @SuppressWarnings("rawtypes") ResponseEntity<String> entity = testRestTemplate
+                .getForEntity(
+                        "http://localhost:" + port + "/greeting", String.class);
+
+        then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        then(entity.getBody()).isNotEmpty();
+    }
 }
